@@ -8,7 +8,7 @@ var expect    = require('chai').expect,
 
 describe('Generator', function () {
   before(function () {
-    person = Generator.generate();
+    person = Generator.generate(1066);
     renderer.person(person);
   });
 
