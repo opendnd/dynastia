@@ -1,7 +1,7 @@
 {
   "name": "dynastia",
   "version": "0.0.1",
-  "description": "A tool for generating dynasties to quickly make a kingdom's history.",
+  "description": "This is a tool for D&D DM's to generate dynasties quickly when making a kingdom's history.",
   "main": "lib/dynastia.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --reporter spec 'test/**/*.js'",
