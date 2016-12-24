@@ -1,5 +1,9 @@
 # Dynastia
 
+[![NPM](https://nodei.co/npm/dynastia.png?downloads=true&stars=true)](https://nodei.co/npm/dynastia/)
+
+[![Build Status](https://travis-ci.org/opendnd/dynastia.svg?branch=master)](https://travis-ci.org/opendnd/dynastia)
+
 This is a tool for D&D DM's to generate dynasties quickly when making a kingdom's history.
 
 ![demo](doc/demo.gif)
