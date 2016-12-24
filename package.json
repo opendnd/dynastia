@@ -1,6 +1,6 @@
 {
   "name": "dynastia",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "This is a tool for D&D DM's to generate dynasties quickly when making a kingdom's history.",
   "main": "lib/dynastia.js",
   "scripts": {
