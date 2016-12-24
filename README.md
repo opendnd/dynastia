@@ -1,10 +1,10 @@
 # Dynastia
 
-[![Join the chat at https://gitter.im/opendnd/dynastia](https://badges.gitter.im/opendnd/dynastia.svg)](https://gitter.im/opendnd/dynastia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 [![NPM](https://nodei.co/npm/dynastia.png?downloads=true&stars=true)](https://nodei.co/npm/dynastia/)
 
 [![Build Status](https://travis-ci.org/opendnd/dynastia.svg?branch=master)](https://travis-ci.org/opendnd/dynastia)
+
+[![Join the chat at https://gitter.im/opendnd/dynastia](https://badges.gitter.im/opendnd/dynastia.svg)](https://gitter.im/opendnd/dynastia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 This is a tool for D&D DM's to generate dynasties quickly when making a kingdom's history.
 
