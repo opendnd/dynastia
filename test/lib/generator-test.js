@@ -4,8 +4,8 @@ var expect    = require('chai').expect,
     libDir    = path.join(rootDir, 'lib'),
     dataDir   = path.join(rootDir, 'lib', 'data'),
     Generator = require(path.join(libDir, 'generator')),
-    renderer  = require(path.join(libDir, 'renderer')),
-    person, result, memorables, sr, ii, iii, iv;
+    Renderer  = require(path.join(libDir, 'renderer')),
+    person, result, memorables, sr, ii, iii, iv, successor;
 
 describe('Generator', function () {
   describe('#generateSuffix', function () {
@@ -78,7 +78,7 @@ describe('Generator', function () {
   describe('#generate', function () {
     before(function () {
       person = Generator.generate(1066);
-      // renderer.person(person);
+      // Renderer.person(person);
     });
 
     describe('has a spouse', function () {
@@ -92,24 +92,32 @@ describe('Generator', function () {
     });
 
     describe('has successor', function () {
+      before(function () {
+        person.issue.forEach(function (child) {
+          if (child.successor) {
+            successor = child;
+          }
+        });
+      });
+
       it('is defined', function () {
-        expect(person.successor).to.not.be.undefined;
+        expect(successor).to.not.be.undefined;
       });
 
       it('has a birth year after the parent birth', function () {
-        expect(person.successor.birth).to.be.above(person.birth);
+        expect(successor.birth).to.be.above(person.birth);
       });
 
       it('has a death year after the parent birth', function () {
-        expect(person.successor.death).to.be.above(person.birth);
+        expect(successor.death).to.be.above(person.birth);
       });
 
       it('has a birth year after the spouse birth', function () {
-        expect(person.successor.birth).to.be.above(person.spouse.birth);
+        expect(successor.birth).to.be.above(person.spouse.birth);
       });
 
       it('has a death year after the spouse birth', function () {
-        expect(person.successor.death).to.be.above(person.spouse.birth);
+        expect(successor.death).to.be.above(person.spouse.birth);
       });
     });
 
