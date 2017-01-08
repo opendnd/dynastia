@@ -77,7 +77,7 @@ describe('Generator', function () {
 
   describe('#generate', function () {
     before(function () {
-      person = Generator.generate(1066);
+      person = Generator.generate({ year: 1066 });
       // Renderer.person(person);
     });
 
@@ -104,19 +104,19 @@ describe('Generator', function () {
         expect(successor).to.not.be.undefined;
       });
 
-      it('has a birth year after the parent birth', function () {
+      it('has a birth year after the father birth', function () {
         expect(successor.birth).to.be.above(person.birth);
       });
 
-      it('has a death year after the parent birth', function () {
+      it('has a death year after the father birth', function () {
         expect(successor.death).to.be.above(person.birth);
       });
 
-      it('has a birth year after the spouse birth', function () {
+      it('has a birth year after the mother birth', function () {
         expect(successor.birth).to.be.above(person.spouse.birth);
       });
 
-      it('has a death year after the spouse birth', function () {
+      it('has a death year after the mother birth', function () {
         expect(successor.death).to.be.above(person.spouse.birth);
       });
     });
