@@ -11,7 +11,7 @@ Inspiration: http://www.chromosomewalk.ch/en/list-of-chromosomes/
 * `>=3` Means that if both pairs are greater than or equal to 3 then the trait is applied
 * `<=3` Means that if both pairs are less than or equal to 3 then the trait is applied
 * `==3` Means that if a 3 is present at all then the trait will apply
-* `!=3` Means that anything except for a roll of 3 will apply the trait
 * `{3}` Means that the sum of the pair should equal this number for the trait to apply
+* `!=3` Means that anything except for a roll of 3 will apply the trait
 
 The rules are applied from first to last from the above list, whichever qualifies first is the trait that will apply.
