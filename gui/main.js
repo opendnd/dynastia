@@ -1,4 +1,4 @@
-const {app, BrowserWindow, ipcMain} = require('electron')
+const {app, BrowserWindow, ipcMain, dialog} = require('electron')
 const path = require('path')
 const url = require('url')
 const rootDir = path.join(__dirname, '.')
@@ -11,7 +11,13 @@ let win
 
 function createWindow () {
   // Create the browser window.
-  win = new BrowserWindow({ width: 1024, height: 742 })
+  win = new BrowserWindow({ 
+    width: 1024, 
+    height: 742, 
+    minWidth: 1024, 
+    minHeight: 742, 
+    backgroundColor: '#000000' 
+  })
 
   // Open the DevTools.
   // win.webContents.openDevTools()
@@ -64,6 +70,10 @@ ipcMain.on('generate', (event, arg) => {
   })
   
   event.returnValue = dynasty
+})
+
+ipcMain.on('pdf', (event, arg) => {
+  
 })
 
 // In this file you can include the rest of your app's specific main process
