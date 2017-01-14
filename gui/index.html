@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Dynastia</title>
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="home" class="active">
+        <div id="title"></div>
+        <div id="options">
+          <button id="medieval" class="active" onClick="selectOption('medieval')"></button>
+          <button id="classical" onClick="selectOption('classical')"></button>
+          <button id="asian" onClick="selectOption('asian')"></button>
+        </div>
+        <button class="next" onClick="nextStep(1)"></button>
+      </div>
+      <div id="generations">
+        <div id="title"></div>
+        <input id="inputGen" value="">
+        <input id="inputYear" value="">
+        <button class="next" onClick="nextStep(2)"></button>
+      </div>
+      <div id="results">
+        <div id="box">
+          <div class="content">
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+            <p>{{name name}} <span class="year">{{year}} - {{year}}</span> son of <span class="father">{{name name}}</span> <span class="year">{{year}} - {{year}}</span></p>
+          </div>
+        </div>
+        <div class="actions">
+          <button id="clipboard" onClick="copyToClipboard()"></button>
+          <button id="startover" onClick="nextStep(0)"></button>
+          <button id="export" onClick="exportToPDF()"></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
