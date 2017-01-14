@@ -1,6 +1,9 @@
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path')
 const url = require('url')
+const rootDir = path.join(__dirname, '..')
+const libDir = path.join(rootDir, 'lib')
+const Generator = require(path.join(libDir, 'generator'))
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -8,7 +11,7 @@ let win
 
 function createWindow () {
   // Create the browser window.
-  win = new BrowserWindow({ width: 1024 /*+450*/, height: 742 })
+  win = new BrowserWindow({ width: 1024, height: 742 })
 
   // Open the DevTools.
   // win.webContents.openDevTools()
@@ -49,6 +52,18 @@ app.on('activate', () => {
   if (win === null) {
     createWindow()
   }
+})
+
+ipcMain.on('generate', (event, arg) => {
+  Generator.themeName = arg.theme
+
+  let dynasty = Generator.generate({
+    year        : arg.year, 
+    gender      : 'male', 
+    generations : arg.generations
+  })
+  
+  event.returnValue = dynasty
 })
 
 // In this file you can include the rest of your app's specific main process

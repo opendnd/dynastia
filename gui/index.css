@@ -136,7 +136,7 @@ button:active {
   margin-left: -359px;
 }
 
-#results #box div.content {
+#results #box #content {
   width: 714px;
   height: 347px;
   background-color: none;
@@ -147,7 +147,7 @@ button:active {
   border-radius: 10px;
 }
 
-#results #box div.content p { 
+#results #box #content p { 
   background-image: url(img/pipe.png);
   background-repeat: no-repeat;
   background-position: 50% 25px;
@@ -155,15 +155,15 @@ button:active {
   text-transform: uppercase;
   font-family: Serif;
 }
-#results #box div.content p:last-child {
+#results #box #content p:last-child {
   background: none;
 }
 
-#results #box div.content p span.year {
+#results #box #content p span.year {
   color: #FBB03B;
 }
 
-#results #box div.content p span.father {
+#results #box #content p span.father {
   color: #9E005D;
 }
 

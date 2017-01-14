@@ -1,10 +1,12 @@
+const {ipcRenderer, clipboard} = require('electron');
+
 var selectedType = 'medieval',
-    generations, year;
+    generations, year, dynasty, prev, copiedText;
 
 function resetAllButtons () {
-  document.getElementById('medieval').className = '';
+  document.getElementById('medieval').className  = '';
   document.getElementById('classical').className = '';
-  document.getElementById('asian').className = '';
+  document.getElementById('asian').className     = '';
 }
 
 function selectOption (button) {
@@ -14,13 +16,18 @@ function selectOption (button) {
 }
 
 function generateResults (cb) {
-  console.log(selectedType, generations, year);
+  dynasty = ipcRenderer.sendSync('generate', { 
+    theme: selectedType,
+    generations: generations,
+    year: year
+  });
+
   cb();
 }
 
 function nextStep (step) {
   if (step === 1) {
-    document.getElementById('home').className = '';
+    document.getElementById('home').className        = '';
     document.getElementById('generations').className = 'active';
   } else if (step === 2) {
     var valid = true,
@@ -56,7 +63,9 @@ function nextStep (step) {
     if (valid) {
       generateResults (function () {
         document.getElementById('generations').className = '';
-        document.getElementById('results').className = 'active';
+        document.getElementById('results').className     = 'active';
+        renderDynasty('', dynasty);
+        copiedText = document.getElementById('content').innerText;
       });
     } else {
       alert(error);
@@ -70,10 +79,93 @@ function nextStep (step) {
   }
 }
 
+// get the successor from the person
+function getSuccessor (person) {
+  var successor;
+
+  // get the successor if we can
+  if (person.issue !== undefined) {
+    person.issue.forEach(function (child) {
+      if (child.successor) {
+        successor = child;
+      }
+    });
+  }
+
+  return successor;
+}
+
+// determine if there is a successor or not
+function hasSuccessor (person) {
+  if (getSuccessor(person) === undefined) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+// render a year
+function renderYear (year) {
+  if (year >= 0) {
+    return year + ' CE';
+  } else {
+    return Math.abs(year) + ' BCE'
+  }
+}
+
+function renderName (person, father) {
+  var output    = '',
+      className = 'person';
+
+  if (father === undefined) {
+    father = false;
+  }
+
+  if (father) {
+    className = 'father';
+  }
+
+  output += '<span class="' + className + '">' + person.name + '</span> <span class="year">(' + renderYear(person.birth) + ' - ' + renderYear(person.death) + ')</span>';
+
+  return output;
+}
+
+function renderDynasty (html, dynasty, first) {
+  if (html === undefined) {
+    html = '';
+  }
+
+  if (first === undefined) {
+    first = true;
+  }
+
+  if (dynasty === undefined) {
+    return html;
+  }
+
+  html += '<p>';
+  html += renderName(dynasty);
+
+  if (!first) {
+    html += ' son of ' + renderName(prev, true);
+  }
+
+  html += '</p>';
+
+  // continue w/ the successor if we have it
+  if (hasSuccessor(dynasty)) {
+    prev = dynasty;
+    renderDynasty(html, getSuccessor(dynasty), false);
+  } else {
+    document.getElementById('content').innerHTML = html;
+  }
+}
+
 function copyToClipboard () {
-  console.log('Copying to clipboard');
+  clipboard.writeText(copiedText);
+  alert('Successfully copied your dynasty to the clipboard');
 }
 
 function exportToPDF () {
-  console.log('Exporting to PDF');
+  alert('Sorry, this feature is not yet supported');
 }
