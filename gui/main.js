@@ -1,8 +1,8 @@
 const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path')
 const url = require('url')
-const rootDir = path.join(__dirname, '..')
-const libDir = path.join(rootDir, 'lib')
+const rootDir = path.join(__dirname, '.')
+const libDir = path.join(rootDir, 'node_modules', 'dynastia', 'lib')
 const Generator = require(path.join(libDir, 'generator'))
 
 // Keep a global reference of the window object, if you don't, the window will

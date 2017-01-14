@@ -3,6 +3,12 @@
   "version": "0.1.0",
   "main": "main.js",
   "dependencies": {
-    "electron": "^1.4.14"
+    "electron": "^1.4.14",
+    "dynastia": "http://github.com/opendnd/dynastia"
+  },
+  "scripts": {
+    "releaseMac": "electron-packager . dynastia --platform=darwin --arch=x64 --icon=icons/icon.icns --overwrite",
+    "releaseWin32": "electron-packager . dynastia --platform=win32 --arch=ia32 --icon=icons/icon.ico --overwrite",
+    "releaseWin64": "electron-packager . dynastia --platform=win32 --arch=x64 --icon=icons/icon.ico --overwrite"
   }
 }
