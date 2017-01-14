@@ -1,9 +1,18 @@
 const {ipcRenderer, clipboard} = require('electron');
-const rootDir = path.join(__dirname, '.');
-const libDir = path.join(rootDir, 'node_modules', 'dynastia', 'lib');
-const Renderer = require(path.join(libDir, 'renderer'));
+const path = require('path');
+var rootDir, libDir;
+    
+// load from within the directory if debugging or get from node modules
+if (process.env.DYNASTIA_DEBUG) {
+  rootDir = path.join(__dirname, '..');  
+  libDir  = path.join(rootDir, 'lib');
+} else {
+  rootDir = path.join(__dirname, '.'),
+  libDir  = path.join(rootDir, 'node_modules', 'dynastia', 'lib'); 
+}
 
-var selectedType = 'medieval',
+var Renderer = require(path.join(libDir, 'renderer')),
+    selectedType = 'medieval',
     generations, year, dynasty, prev, copiedText;
 
 function resetAllButtons () {

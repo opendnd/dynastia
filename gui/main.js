@@ -10,9 +10,14 @@ const Generator = require(path.join(libDir, 'generator'))
 let win
 
 function createWindow () {
+  var debugWidth = 0
+  if (process.env.DYNASTIA_DEBUG) {
+    debugWidth = 450
+  }
+
   // Create the browser window.
   win = new BrowserWindow({ 
-    width: 1024, 
+    width: 1024 + debugWidth, 
     height: 742, 
     minWidth: 1024, 
     minHeight: 742, 
@@ -20,7 +25,9 @@ function createWindow () {
   })
 
   // Open the DevTools.
-  // win.webContents.openDevTools()
+  if (process.env.DYNASTIA_DEBUG) {
+    win.webContents.openDevTools()
+  }
 
   // and load the index.html of the app.
   win.loadURL(url.format({
@@ -73,7 +80,7 @@ ipcMain.on('generate', (event, arg) => {
 })
 
 ipcMain.on('pdf', (event, arg) => {
-  
+
 })
 
 // In this file you can include the rest of your app's specific main process

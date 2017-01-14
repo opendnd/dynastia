@@ -1,3 +1,14 @@
+a:not([draggable=true]), img:not([draggable=true]) {
+  -webkit-user-drag: none;
+  user-drag: none; /* Technically not supported in Electron yet */
+}
+a[href^="http://"],
+a[href^="https://"],
+a[href^="ftp://"] {
+  -webkit-user-drag: auto;
+  user-drag: auto; /* Technically not supported in Electron yet */
+}
+
 body {
   padding: 0;
   margin: 0;
