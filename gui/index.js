@@ -1,6 +1,9 @@
 const {ipcRenderer, clipboard} = require('electron');
 const path = require('path');
-var rootDir, libDir;
+var rootDir, libDir, 
+    selectedType = 'medieval',
+    selectedType, generations, year, 
+    dynasty, prev, copiedText;
     
 // load from within the directory if debugging or get from node modules
 if (process.env.DYNASTIA_DEBUG) {
@@ -11,9 +14,7 @@ if (process.env.DYNASTIA_DEBUG) {
   libDir  = path.join(rootDir, 'node_modules', 'dynastia', 'lib'); 
 }
 
-var Renderer = require(path.join(libDir, 'renderer')),
-    selectedType = 'medieval',
-    generations, year, dynasty, prev, copiedText;
+var Renderer = require(path.join(libDir, 'renderer'));
 
 function resetAllButtons () {
   document.getElementById('medieval').className  = '';
@@ -41,6 +42,12 @@ function nextStep (step) {
   if (step === 1) {
     document.getElementById('home').className        = '';
     document.getElementById('generations').className = 'active';
+
+    // make testing the form easier
+    if (process.env.DYNASTIA_DEBUG) {
+      document.getElementById('inputGen').value  = 5;
+      document.getElementById('inputYear').value = 1066;
+    }
   } else if (step === 2) {
     var valid = true,
         error;
