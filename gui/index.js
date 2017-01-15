@@ -16,6 +16,10 @@ if (process.env.DYNASTIA_DEBUG) {
 
 var Renderer = require(path.join(libDir, 'renderer'));
 
+ipcRenderer.on('start-pdf', function (event, arg) {
+  startLoading();
+});
+
 ipcRenderer.on('finish-pdf', function (event, arg) {
   endLoading();
   setTimeout(function () {
@@ -123,6 +127,5 @@ function copyToClipboard () {
 }
 
 function exportToPDF () {
-  startLoading();
-  ipcRenderer.send('pdf', { dynasty: dynasty });
+  ipcRenderer.send('pdf');
 }

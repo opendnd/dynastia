@@ -180,12 +180,14 @@ button:active {
 
 #results #box #content p { 
   background-image: url(img/pipe.png);
-  background-repeat: no-repeat;
-  background-position: 50% 25px;
-  height: 45px;
   text-transform: uppercase;
   font-family: Serif;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  height: 45px;
+  font-size: 14px;
 }
+
 #results #box #content p:last-child {
   background: none;
 }
@@ -245,3 +247,5 @@ button.next {
   width: 79px;
   height: 74px;
 }
+
+/* Can be used in the app or in PDF generation */

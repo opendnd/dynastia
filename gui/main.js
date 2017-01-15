@@ -14,12 +14,16 @@ if (process.env.DYNASTIA_DEBUG) {
 }
 
 // load dynastia modules
-var Generator = require(path.join(libDir, 'generator')),
+var tplDir    = path.join(__dirname, 'tpl'),
+    Generator = require(path.join(libDir, 'generator')),
     Renderer  = require(path.join(libDir, 'renderer'));
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
+
+// Keep a global reference to the dynasty object
+var dynasty;
 
 function createWindow () {
   var debugWidth = 0;
@@ -82,7 +86,7 @@ app.on('activate', () => {
 ipcMain.on('generate', (event, arg) => {
   Generator.themeName = arg.theme;
 
-  let dynasty = Generator.generate({
+  dynasty = Generator.generate({
     year        : arg.year, 
     gender      : 'male', 
     generations : arg.generations
@@ -92,23 +96,31 @@ ipcMain.on('generate', (event, arg) => {
 })
 
 ipcMain.on('pdf', (event, arg) => {
-  let options = { format: 'Letter' };
+  let options = { 
+    format: 'Letter',
+    border: {
+      top: '0.25in',
+      right: '0in',
+      bottom: '0.25in',
+      left: '0in'
+    }
+  };
 
   dialog.showSaveDialog(function (fileName) {
     if (fileName === undefined) return;
+
+    event.sender.send('start-pdf');
 
     // add pdf extension
     if (fileName.indexOf('.pdf') < 0) {
       fileName += '.pdf';
     }
 
-    Renderer.renderDynasty('', arg.dynasty, true, function (html) {
-      // add extra html
-      var pdfHTML = '<html><head><title>Dynastia</title></head><body>' +
-                    '<h1>Your Dynasty</h1><div id="content">' + html + '</div>' +
-                    '</body></html>';
+    Renderer.renderDynasty('', dynasty, true, function (html) {
+      // add extra html from template
+      var pdfHTML = fs.readFileSync(path.join(tplDir, 'pdf.html'), { encoding: 'utf8' });
 
-      pdf.create(pdfHTML, options).toFile(fileName, function(err, res) {
+      pdf.create(pdfHTML.replace('{{yield}}', html), options).toFile(fileName, function(err, res) {
         event.sender.send('finish-pdf');
       });
     });
