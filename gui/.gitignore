@@ -1,4 +1,4 @@
-dynastia-darwin-x64
-dynastia-win32-ia32
-dynastia-win32-x64
-*.zip
+dist/dynastia-darwin-x64
+dist/dynastia-win32-ia32
+dist/dynastia-win32-x64
+dist/*.zip

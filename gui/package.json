@@ -10,8 +10,9 @@
   "scripts": {
     "start": "electron .",
     "debug": "DYNASTIA_DEBUG=true electron .",
-    "releaseMac": "electron-packager . dynastia --platform=darwin --arch=x64 --icon=icons/icon.icns --overwrite",
-    "releaseWin32": "electron-packager . dynastia --platform=win32 --arch=ia32 --icon=icons/icon.ico --overwrite",
-    "releaseWin64": "electron-packager . dynastia --platform=win32 --arch=x64 --icon=icons/icon.ico --overwrite"
+    "release": "./dist/release.sh",
+    "releaseMac": "./dist/release-mac.sh",
+    "releaseWin32": "./dist/release-win32.sh",
+    "releaseWin64": "./dist/release-win64.sh"
   }
 }
