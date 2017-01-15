@@ -106,6 +106,7 @@ function nextStep (step) {
 
         Renderer.renderDynasty('', dynasty, true, function (html) {
           document.getElementById('content').innerHTML = html;
+          document.getElementById('content').scrollTop = 0;
           copiedText = document.getElementById('content').innerText;
         });
       });
