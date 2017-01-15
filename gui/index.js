@@ -16,6 +16,21 @@ if (process.env.DYNASTIA_DEBUG) {
 
 var Renderer = require(path.join(libDir, 'renderer'));
 
+ipcRenderer.on('finish-pdf', function (event, arg) {
+  endLoading();
+  setTimeout(function () {
+    alert('Your PDF has been successfully saved');
+  }, 100);
+});
+
+function startLoading () {
+  document.getElementById('loader').className = 'active';
+}
+
+function endLoading () {
+  document.getElementById('loader').className = '';
+}
+
 function resetAllButtons () {
   document.getElementById('medieval').className  = '';
   document.getElementById('classical').className = '';
@@ -29,12 +44,13 @@ function selectOption (button) {
 }
 
 function generateResults (cb) {
+  startLoading();
   dynasty = ipcRenderer.sendSync('generate', { 
     theme: selectedType,
     generations: generations,
     year: year
   });
-
+  endLoading();
   cb();
 }
 
@@ -107,5 +123,6 @@ function copyToClipboard () {
 }
 
 function exportToPDF () {
+  startLoading();
   ipcRenderer.send('pdf', { dynasty: dynasty });
 }

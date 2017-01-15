@@ -109,10 +109,7 @@ ipcMain.on('pdf', (event, arg) => {
                     '</body></html>';
 
       pdf.create(pdfHTML, options).toFile(fileName, function(err, res) {
-        dialog.showMessageBox(win, {
-          title: 'Success',
-          message: 'Your PDF has been successfully saved'
-        });
+        event.sender.send('finish-pdf');
       });
     });
   });

@@ -17,19 +17,13 @@ a[href^="ftp://"] {
   top: 0;
   left: 0;
   background: black;
+  background-image: url(img/loading.gif);
+  background-position: center center;
+  background-repeat: no-repeat;
   opacity: 0.7;
   color: white;
   text-align: center;
   z-index: 100;
-}
-#loader span {
-  display: block;
-  width: 200px;
-  height: 40px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -20px 0 0 -100px;
 }
 #loader.active {
   display: block;
