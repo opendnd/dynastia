@@ -84,12 +84,11 @@ app.on('activate', () => {
 });
 
 ipcMain.on('generate', (event, arg) => {
-  Generator.themeName = arg.theme;
-
   dynasty = Generator.generate({
     year        : arg.year, 
     gender      : 'male', 
-    generations : arg.generations
+    generations : arg.generations,
+    theme       : arg.theme
   });
   
   event.returnValue = dynasty;
