@@ -84,6 +84,7 @@ app.on('activate', () => {
 });
 
 ipcMain.on('generate', (event, arg) => {
+  Generator.reset();
   dynasty = Generator.generate({
     year        : arg.year, 
     gender      : 'male', 
