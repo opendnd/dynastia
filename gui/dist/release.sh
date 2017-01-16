@@ -1,5 +1,5 @@
 #!/bin/bash
 
-./dist/release-mac.sh
-./dist/release-win32.sh
-./dist/release-win64.sh
+bash -ex ./dist/release-mac.sh
+bash -ex ./dist/release-win32.sh
+bash -ex ./dist/release-win64.sh
