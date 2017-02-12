@@ -44,7 +44,7 @@
           </div>
           <div class="row">
             <div class="col-xs-4"><strong>Consort</strong></div>
-            <div class="col-xs-8"><a href="">{{spouse_name}}</a></div>
+            <div class="col-xs-8"><a href="">{{spouse.name}}</a></div>
           </div>
           <div class="row">
             <div class="col-xs-4"><strong>Issue</strong></div>
@@ -60,11 +60,11 @@
           </div>
           <div class="row">
             <div class="col-xs-4"><strong>Father</strong></div>
-            <div class="col-xs-8"><a href="">{{father_name}}</a></div>
+            <div class="col-xs-8"><a href="">{{father.name}}</a></div>
           </div>
           <div class="row">
             <div class="col-xs-4"><strong>Mother</strong></div>
-            <div class="col-xs-8"><a href="">{{mother_name}}</a></div>
+            <div class="col-xs-8"><a href="">{{mother.name}}</a></div>
           </div>
           <div class="row">
             <div class="col-xs-4"><strong>Religion</strong></div>
@@ -72,11 +72,11 @@
           </div>
         </div>
       </div>
-      <p><strong>{{name}}</strong> ({{birth}} - {{death}}) son of <a href="">{{father_name}}</a>, was King of Dynasty to his death in {{death}}.</p>
-      <p>{{backstory_early_life}}</p>
-      <p>{{backstory_career}}</p>
-      <p>{{backstory_personal_life}}</p>
-      <p>{{backstory_death}}</p>
+      <p><strong>{{name}}</strong> ({{birth}} - {{death}}) son of <a href="">{{father.name}}</a>, was King of Dynasty to his death in {{death}}.</p>
+      <p>{{backstory.early_life}}</p>
+      <p>{{backstory.career}}</p>
+      <p>{{backstory.personal_life}}</p>
+      <p>{{backstory.death}}</p>
       <div style="clear:both"></div>
     </div>
   </body>
