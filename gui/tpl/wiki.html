@@ -19,15 +19,15 @@
         <div class="grid">
           <div class="row">
             <div class="col-xs-4"><strong>Reign</strong></div>
-            <div class="col-xs-8">1348 CE - 1385 CE</div>
+            <div class="col-xs-8">{{reign.start}} - {{reign.end}}</div>
           </div>
           <div class="row">
             <div class="col-xs-4"><strong>Predecessor</strong></div>
-            <div class="col-xs-8"><a href="">Leofrick</a></div>
+            <div class="col-xs-8"><a href="/{{predecessor.id}}">{{predecessor.name}}</a></div>
           </div>
           <div class="row">
             <div class="col-xs-4"><strong>Successor</strong></div>
-            <div class="col-xs-8"><a href="">Tristan</a></div>
+            <div class="col-xs-8"><a href="/{{successor.id}}">{{successor.name}}</a></div>
           </div>
           <hr>
           <div class="row">
@@ -44,14 +44,14 @@
           </div>
           <div class="row">
             <div class="col-xs-4"><strong>Consort</strong></div>
-            <div class="col-xs-8"><a href="">{{spouse.name}}</a></div>
+            <div class="col-xs-8"><a href="/{{spouse.id}}">{{spouse.name}}</a></div>
           </div>
           <div class="row">
             <div class="col-xs-4"><strong>Issue</strong></div>
             <div class="col-xs-8">
-              <p><a href="">Helena</a></p>
-              <p><a href="">Tristan</a></p>
-              <p><a href="">Clifton</a></p>
+              {{#each issue}}
+                <p><a href="/{{this.id}}">{{this.name}}</a></p>
+              {{/each}}
             </div>
           </div>
           <div class="row">
@@ -60,11 +60,23 @@
           </div>
           <div class="row">
             <div class="col-xs-4"><strong>Father</strong></div>
-            <div class="col-xs-8"><a href="">{{father.name}}</a></div>
+            <div class="col-xs-8">
+              {{#if father.unknown}}
+                {{father.name}}
+              {{else}}
+                <a href="/{{father.id}}">{{father.name}}</a>
+              {{/if}}
+            </div>
           </div>
           <div class="row">
             <div class="col-xs-4"><strong>Mother</strong></div>
-            <div class="col-xs-8"><a href="">{{mother.name}}</a></div>
+            <div class="col-xs-8">
+              {{#if mother.unknown}}
+                {{mother.name}}
+              {{else}}
+                <a href="/{{mother.id}}">{{mother.name}}</a>
+              {{/if}}
+            </div>
           </div>
           <div class="row">
             <div class="col-xs-4"><strong>Religion</strong></div>
@@ -72,7 +84,9 @@
           </div>
         </div>
       </div>
-      <p><strong>{{name}}</strong> ({{birth}} - {{death}}) son of <a href="">{{father.name}}</a>, was King of Dynasty to his death in {{death}}.</p>
+      {{#if successor}}
+        <p><strong>{{name}}</strong> ({{birth}} - {{death}}) son of <a href="/{{father.id}}">{{father.name}}</a>, was King of Dynasty to his death in {{death}}.</p>
+      {{/if}}
       <p>{{backstory.early_life}}</p>
       <p>{{backstory.career}}</p>
       <p>{{backstory.personal_life}}</p>
