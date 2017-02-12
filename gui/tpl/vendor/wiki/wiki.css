@@ -2,6 +2,12 @@ body {
   background-color: #fbfbfb;
 }
 
+div.sidebar {
+  position: fixed;
+  top: 115px;
+  left: 30px;
+}
+
 div.wiki-container {
   background-color: #fff;
   width: auto;
