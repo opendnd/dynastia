@@ -1,0 +1,89 @@
+{
+  "occupation": [
+    "street cleaning",
+    "baker",
+    "blacksmith",
+    "warrior",
+    "merchant",
+    "hunter"
+  ],
+
+  "father_occupation": [
+    "street cleaning",
+    "baker",
+    "blacksmith",
+    "warrior",
+    "merchant",
+    "hunter"
+  ],
+
+  "backstory_birth": [
+    "{name} was born in {birth_year} {birth_location}."
+  ],
+
+  "birth_location": [
+    "on a cold evening outside of a tavern",
+    "near the village of Allaria",
+    "in an unknown location"
+  ],
+
+  "backstory_early_life": [
+    "{backstory_birth} {parents_description}. As a boy, {name} {early_actions}. {backstory_education}"
+  ],
+
+  "parents_description": [
+    "{name} was the son of {father_name}, a {father_occupation}. His mother was a kind woman and volunteered to feed the poor",
+    "{name} was the son of {father_name} and {mother_name}"
+  ],
+
+  "early_actions": [
+    "was always curious and tinkering with everything he could get his hands on",
+    "had a tough life. His parents struggled to make ends meet and worked often on side jobs to help out the family"
+  ],
+
+  "backstory_education": [
+    "{name} received his certification in {occupation} from {school_location} in 1085 CE.",
+    "{name} never underwent any formal training, but was a keen observer as he apprenticed as a {occupation}."
+  ],
+
+  "school_location": [
+    "College of Allaria"
+  ],
+
+  "backstory_career": [
+    "{backstory_early_career} {backstory_late_career}"
+  ],
+
+  "backstory_early_career": [
+    "Shortly thereafter, {name} began his career as a {occupation}. {early_career}."
+  ],
+
+  "early_career": [
+    "It was a rocky start at first. But he quickly learned the ropes",
+    "He was an immediate success"
+  ],
+
+  "backstory_late_career": [
+    "In 1096 CE, {name} was named the best {occupation} in his village. His business was booming and enjoyed much success."
+  ],
+
+  "backstory_personal_life": [
+    "{name} married {spouse_name} in {marriage_year}. {wedding}. They had several children."
+  ],
+
+  "wedding": [
+    "They had a traditional marriage in a church",
+    "Their wedding was small and held in a local tavern",
+    "They were married by a local priest in a garden"
+  ],
+
+  "backstory_death": [
+    "{name} {cause_of_death} in {death_year}. He was survived by his wife {spouse_name} and their children."
+  ],
+
+  "cause_of_death": [
+    "died in a fire",
+    "was stricken with pneumonia and died",
+    "was diagnosed with rabies and died"
+  ]
+}
