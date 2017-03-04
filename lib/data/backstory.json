@@ -49,7 +49,7 @@
     "jewler",
     "chef",
     "actor",
-    "town drunk"
+    "town drunk",
     "brewer",
     "alchemist",
     "apocathery",
@@ -123,8 +123,6 @@
     "swashbuckler",
     "warblade",
     "avenger"
-
-
   ],
 
   "occupation_magic": [
@@ -147,8 +145,6 @@
     "psion",
     "artificer",
     "magician"
-
-    
   ],
 
   "occupation_nobel": [
@@ -174,7 +170,6 @@
     "captain",
     "steward",
     "seneschal"
-
   ],
 
   "occupation_dark": [
