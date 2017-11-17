@@ -51,7 +51,7 @@ describe('Generator', function () {
 
   describe('#generateName', function () {
     before(function () {
-      Generator.theme = require(path.join(dataDir, 'medieval.json'));
+      Generator.themeName = 'medieval';
     });
 
     describe('for males', function () {
