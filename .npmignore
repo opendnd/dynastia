@@ -50,5 +50,4 @@ jspm_packages
 tmp
 *.dyn
 
-gui/*
 doc/*

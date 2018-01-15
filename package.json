@@ -4,8 +4,10 @@
   "description": "This is a tool for D&D DM's to generate dynasties quickly when making a kingdom's history.",
   "main": "lib/dynastia.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --reporter spec 'test/**/*.js'",
-    "debug": "./node_modules/mocha/bin/mocha debug --reporter spec 'test/**/*.js'"
+    "start": "bin/dynastia",
+    "test": "npm run test:mocha && npm run test:lint",
+    "test:mocha": "mocha --reporter spec 'test/**/*.js'",
+    "test:lint": "eslint ."
   },
   "author": "Drew Morris <dhmorris@gmail.com>",
   "license": "MIT",
@@ -25,20 +27,25 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "colors": "^1.1.2",
-    "commander": "^2.9.0",
+    "commander": "^2.12.2",
     "express": "^4.14.0",
     "handlebars": "^4.0.6",
     "js-md5": "^0.4.2",
     "mustache": "^2.3.0",
     "node-zip": "^1.1.1",
-    "nomina": "^0.2.3",
+    "nomina": "^0.4.1",
+    "personae": "^0.6.8",
     "prettyjson": "^1.2.1",
     "questions": "0.0.6",
+    "random-weighted": "^1.0.0",
     "roll": "^1.2.0",
     "roman-numerals": "^0.3.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-import": "^2.2.0",
     "mocha": "^3.2.0"
   }
 }

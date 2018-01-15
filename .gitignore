@@ -49,8 +49,3 @@ jspm_packages
 # Ignore generated files
 tmp
 *.dyn
-
-gui/dist/dynastia-darwin-x64
-gui/dist/dynastia-win32-ia32
-gui/dist/dynastia-win32-x64
-gui/dist/installers/*
