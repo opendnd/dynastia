@@ -49,3 +49,4 @@ jspm_packages
 # Ignore generated files
 tmp
 *.dyn
+*.per
