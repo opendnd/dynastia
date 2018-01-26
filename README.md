@@ -6,8 +6,6 @@
 
 This is a tool for D&D DM's to generate dynasties quickly when making a person's backstory.
 
-![demo](doc/demo.gif)
-
 ## Installation
 
 You will need [node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) installed. Then do:
