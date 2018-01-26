@@ -34,7 +34,7 @@
     "mustache": "^2.3.0",
     "node-zip": "^1.1.1",
     "nomina": "^0.4.2",
-    "personae": "^0.7.2",
+    "personae": "^0.7.3",
     "prettyjson": "^1.2.1",
     "questions": "0.0.6",
     "random-weighted": "^1.0.0",
