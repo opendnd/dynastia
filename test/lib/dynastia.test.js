@@ -4,7 +4,7 @@ const rootDir = path.join(__dirname, '..', '..');
 const libDir = path.join(rootDir, 'lib');
 const Dynastia = require(path.join(libDir, 'dynastia'));
 const Renderer = require(path.join(libDir, 'renderer'));
-let dynastia;
+let dynastia, dynasty;
 
 describe('Dynastia', () => {
   before(() => {
@@ -17,16 +17,12 @@ describe('Dynastia', () => {
     });
   });
 
-  it('can generate', (done) => {
-    dynastia.generate()
-    .then((dynasty) => {
-      expect(dynasty).to.be.an('object');
-      expect(dynasty.generations.regnant).to.be.a('string');
-      expect(dynasty.generations.consort).to.be.a('string');
-      done();
-    }).catch((err) => {
-      done(err);
-    });
+  it('can generate', () => {
+    dynasty = dynastia.generate();
+
+    expect(dynasty).to.be.an('object');
+    expect(dynasty.generations.regnant).to.be.a('string');
+    expect(dynasty.generations.consort).to.be.a('string');
   });
 
   it('getDefaults returns defaults with genders and races', () => {
