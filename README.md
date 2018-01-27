@@ -2,7 +2,7 @@
 
 [![NPM](https://nodei.co/npm/dynastia.png?downloads=true&stars=true)](https://nodei.co/npm/dynastia/) 
 
-[![Build Status](https://travis-ci.org/opendnd/dynastia.svg?branch=master)](https://travis-ci.org/opendnd/dynastia) [![Join the chat at https://gitter.im/opendnd/dynastia](https://badges.gitter.im/opendnd/dynastia.svg)](https://gitter.im/opendnd/dynastia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/opendnd/dynastia.svg?branch=master)](https://travis-ci.org/opendnd/dynastia)
 
 This is a tool for D&D DM's to generate dynasties quickly when making a person's backstory.
 
@@ -19,13 +19,13 @@ Dynastia is used to generate a dynasty to quickly generate a person's history.
 
 Once you have saved a file you can load it again.
 
-`dynastia -i my-file.dyn`
+`dynastia render -i my-file.dyn --verbose`
 
 ### Changing the output directory
 
 You can specify a specific output directory, otherwise it will save to `pwd`.
 
-`dynastia -o my/output/dir`
+`dynastia generate -o my/output/dir`
 
 ## Contributing
 
