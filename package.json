@@ -27,7 +27,7 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "colors": "^1.1.2",
-    "commander": "^2.13.0",
+    "commander": "^2.14.1",
     "express": "^4.14.0",
     "genetica": "^0.3.10",
     "handlebars": "^4.0.6",
@@ -35,12 +35,13 @@
     "mustache": "^2.3.0",
     "node-zip": "^1.1.1",
     "nomina": "^0.4.2",
-    "personae": "^0.8.1",
+    "personae": "^0.8.3",
     "prettyjson": "^1.2.1",
     "questions": "0.0.6",
     "random-weighted": "^1.0.0",
     "roll": "^1.2.0",
-    "roman-numerals": "^0.3.2"
+    "roman-numerals": "^0.3.2",
+    "terminal-kit": "^1.14.3"
   },
   "devDependencies": {
     "chai": "^3.5.0",
