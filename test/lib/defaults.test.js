@@ -13,10 +13,6 @@ describe('defaults', () => {
     expect(defaults.epithets).to.be.an('array');
   });
 
-  it('has themes', () => {
-    expect(defaults.themes).to.be.an('array');
-  });
-
   it('has genders', () => {
     expect(defaults.genders).to.be.an('array');
   });

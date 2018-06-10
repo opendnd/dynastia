@@ -1,6 +1,6 @@
 {
   "name": "dynastia",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "This is a tool for D&D DM's to generate dynasties quickly when making a kingdom's history.",
   "main": "lib/dynastia.js",
   "scripts": {
@@ -34,8 +34,8 @@
     "js-md5": "^0.4.2",
     "mustache": "^2.3.0",
     "node-zip": "^1.1.1",
-    "nomina": "^0.4.2",
-    "personae": "^0.8.3",
+    "nomina": "^0.4.3",
+    "personae": "^0.8.4",
     "prettyjson": "^1.2.1",
     "questions": "0.0.6",
     "random-weighted": "^1.0.0",
@@ -45,9 +45,9 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "eslint": "^3.16.1",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^11.1.0",
     "eslint-plugin-import": "^2.2.0",
-    "mocha": "^3.2.0"
+    "mocha": "^5.2.0"
   }
 }
